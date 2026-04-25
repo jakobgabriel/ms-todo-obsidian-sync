@@ -1,24 +1,32 @@
 {
-  "name": "obsidian-mstodo-sync",
-  "version": "1.0.0",
-  "description": "Sync Microsoft To Do tasks into your Obsidian vault",
-  "main": "main.js",
-  "scripts": {
-    "dev": "node esbuild.config.mjs",
-    "build": "node esbuild.config.mjs production",
-    "typecheck": "tsc --noEmit"
-  },
-  "keywords": [],
-  "author": "jakobgabriel",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "builtin-modules": "^3.3.2",
-    "esbuild": "^0.28.0",
-    "obsidian": "^1.7.2",
-    "typescript": "^5.1.0"
-  },
-  "dependencies": {
-    "@azure/msal-browser": "^3.28.0"
-  }
+	"name": "obsidian-mstodo-sync",
+	"version": "1.0.0",
+	"description": "Sync Microsoft To Do tasks into your Obsidian vault",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint ."
+	},
+	"keywords": [],
+	"author": "jakobgabriel",
+	"license": "MIT",
+	"devDependencies": {
+		"@eslint/js": "9.30.1",
+		"@types/node": "^22.0.0",
+		"builtin-modules": "^3.3.2",
+		"esbuild": "0.25.5",
+		"eslint-plugin-obsidianmd": "0.1.9",
+		"globals": "14.0.0",
+		"jiti": "2.6.1",
+		"tslib": "2.4.0",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "8.35.1"
+	},
+	"dependencies": {
+		"@azure/msal-browser": "^3.28.0",
+		"obsidian": "latest"
+	}
 }
