@@ -1,0 +1,11 @@
+{
+  "id": "mstodo-sync",
+  "name": "MS To Do Sync",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Sync Microsoft To Do tasks into your vault",
+  "author": "",
+  "authorUrl": "",
+  "fundingUrl": "",
+  "isDesktopOnly": true
+}
