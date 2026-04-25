@@ -1,0 +1,11 @@
+{
+  "id": "mstodo-sync",
+  "name": "MS To Do Sync",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Sync Microsoft To Do tasks into Obsidian using the Microsoft Graph API. Supports Obsidian Tasks format, due dates, priorities, and per-list file mapping.",
+  "author": "jakobgabriel",
+  "authorUrl": "https://github.com/jakobgabriel",
+  "fundingUrl": "",
+  "isDesktopOnly": true
+}

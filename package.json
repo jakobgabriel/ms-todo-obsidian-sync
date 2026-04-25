@@ -1,0 +1,24 @@
+{
+  "name": "obsidian-mstodo-sync",
+  "version": "1.0.0",
+  "description": "Sync Microsoft To Do tasks into your Obsidian vault",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "jakobgabriel",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^3.3.2",
+    "esbuild": "^0.28.0",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.1.0"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^3.28.0"
+  }
+}
