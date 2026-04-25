@@ -11,41 +11,42 @@ if you want to view the source, please visit the github repository of this plugi
 const prod = process.argv[2] === "production";
 
 const context = await esbuild.context({
-  banner: { js: banner },
-  entryPoints: ["src/main.ts"],
-  bundle: true,
-  external: [
-    "obsidian",
-    "electron",
-    "@codemirror/autocomplete",
-    "@codemirror/collab",
-    "@codemirror/commands",
-    "@codemirror/language",
-    "@codemirror/lint",
-    "@codemirror/search",
-    "@codemirror/state",
-    "@codemirror/view",
-    "@lezer/common",
-    "@lezer/highlight",
-    "@lezer/lr",
-    ...builtins,
-  ],
-  format: "cjs",
-  target: "chrome106",
-  logLevel: "info",
-  sourcemap: prod ? false : "inline",
-  treeShaking: true,
-  outfile: "main.js",
-  platform: "browser",
-  define: {
-    "global": "globalThis",
-    "process.env.NODE_ENV": prod ? '"production"' : '"development"',
-  },
+	banner: { js: banner },
+	entryPoints: ["src/main.ts"],
+	bundle: true,
+	external: [
+		"obsidian",
+		"electron",
+		"@codemirror/autocomplete",
+		"@codemirror/collab",
+		"@codemirror/commands",
+		"@codemirror/language",
+		"@codemirror/lint",
+		"@codemirror/search",
+		"@codemirror/state",
+		"@codemirror/view",
+		"@lezer/common",
+		"@lezer/highlight",
+		"@lezer/lr",
+		...builtins,
+	],
+	format: "cjs",
+	target: "chrome106",
+	logLevel: "info",
+	sourcemap: prod ? false : "inline",
+	treeShaking: true,
+	minify: prod,
+	outfile: "main.js",
+	platform: "browser",
+	define: {
+		"global": "globalThis",
+		"process.env.NODE_ENV": prod ? '"production"' : '"development"',
+	},
 });
 
 if (prod) {
-  await context.rebuild();
-  process.exit(0);
+	await context.rebuild();
+	process.exit(0);
 } else {
-  await context.watch();
+	await context.watch();
 }
